@@ -1,3 +1,6 @@
+#
+# TODO: enable sound
+#
 %define		sname	vacuum
 Summary:	Crossplatform Jabber client written on Qt
 Summary(pl.UTF-8):	Międzyplatformowy klient Jabbera napisany w Qt
