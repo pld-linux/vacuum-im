@@ -5,14 +5,13 @@
 Summary:	Crossplatform Jabber client written on Qt
 Summary(pl.UTF-8):	Międzyplatformowy klient Jabbera napisany w Qt
 Name:		vacuum-im
-Version:	1.0.2
-Release:	1
+Version:	r1503
+Release:	0.svn.1
 License:	GPL v3+
 Group:		Applications/Communications
-Source0:	http://vacuum-im.googlecode.com/files/%{sname}-%{version}-source.tar.gz
-# Source0-md5:	96f6a1510f9a9a94e0a90fc060924fa0
-Patch0:		%{name}-qHash.patch
-Patch1:		%{name}-desktop.patch
+Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	717eb817da4cc30e8b62575720fc46ad
+Patch0:		%{name}-desktop.patch
 URL:		http://code.google.com/p/vacuum-im/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
@@ -47,10 +46,8 @@ This package includes files needed to develop Vacuum-IM modules.
 Ta paczka zawiera pliki niezbędne do rozwijania modułów dla Vacuum-IM.
 
 %prep
-%setup -q -n %{sname}-%{version}
-%undos src/plugins/dataforms/dataforms.cpp
+%setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 qmake-qt4 -recursive vacuum.pro \
@@ -80,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_libdir}/libvacuumutils.so.*.*.*
 %attr(755,root,root) %{_libdir}/libvacuumutils.so.1
-%attr(755,root,root) %ghost %{_libdir}/libvacuumutils.so.1.0
+%attr(755,root,root) %ghost %{_libdir}/libvacuumutils.so.1.7
 %dir %{_libdir}/%{sname}
 %dir %{_libdir}/%{sname}/plugins
 %attr(755,root,root) %{_libdir}/%{sname}/plugins/*.so
