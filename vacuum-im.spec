@@ -17,7 +17,8 @@ BuildRequires:	QtNetwork-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	qt4-build >= 4.3.3-3
 BuildRequires:	qt4-qmake >= 4.3.3-3
-BuildRequires:	rpmbuild(macros) >= 1.129
+BuildRequires:	rpmbuild(macros) >= 1.566
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,6 +45,7 @@ Ta paczka zawiera pliki niezbędne do rozwijania modułów dla Vacuum-IM.
 
 %prep
 %setup -q -n %{sname}-%{version}
+%undos src/plugins/dataforms/dataforms.cpp
 %patch0 -p1
 %patch1 -p1
 
