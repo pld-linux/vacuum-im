@@ -16,6 +16,7 @@ URL:		http://code.google.com/p/vacuum-im/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtNetwork-devel
+BuildRequires:	QtWebKit-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	qt4-build >= 4.3.3-3
 BuildRequires:	qt4-qmake >= 4.3.3-3
