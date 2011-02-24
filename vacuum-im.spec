@@ -52,7 +52,8 @@ Ta paczka zawiera pliki niezbędne do rozwijania modułów dla Vacuum-IM.
 
 %build
 qmake-qt4 -recursive vacuum.pro \
-	INSTALL_PREFIX="%{_prefix}"
+	INSTALL_PREFIX="%{_prefix}" \
+	INSTALL_LIB_DIR="%{_lib}"
 
 %{__make}
 
