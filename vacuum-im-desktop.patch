@@ -1,19 +1,21 @@
---- vacuum-1.0.2/src/packages/linux/vacuum.desktop~	2010-01-18 06:49:05.000000000 +0100
-+++ vacuum-1.0.2/src/packages/linux/vacuum.desktop	2011-02-22 16:26:13.691779398 +0100
-@@ -2,10 +2,13 @@
+--- vacuum-im-r1503/src/packages/linux/vacuum.desktop~	2011-02-24 15:49:19.000000000 +0100
++++ vacuum-im-r1503/src/packages/linux/vacuum.desktop	2011-02-24 16:46:19.930943913 +0100
+@@ -2,12 +2,15 @@
  Encoding=UTF-8
- Name=Vacuum IM
+ Name=Vacuum-IM
  GenericName=Jabber Client
 +GenericName[pl]=Klient Jabbera
+ GenericName[ru]=Jabber клиент
  Comment=Communicate over the Jabber network
++Comment[pl]=Komunikacja poprzez sieć Jabber
+ Comment[ru]=Общение в сети Jabber
 -Exec=vacuum
 -Icon=vacuum
-+Comment[pl]=Komunikacja poprzez sieć Jabber
 +Exec=vacuum-im
 +Icon=vacuum-im
  StartupNotify=true
  Type=Application
  Terminal=false
--Categories=Network;InstantMessaging;Qt
+-Categories=Network;InstantMessaging;Qt;
 +Categories=Qt;Network;InstantMessaging;
 +# vi: encoding=utf-8
