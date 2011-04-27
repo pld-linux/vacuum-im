@@ -53,6 +53,7 @@ Ta paczka zawiera pliki niezbędne do rozwijania modułów dla Vacuum-IM.
 
 %prep
 %setup -q -n %{sname}-%{version}-svn
+%undos src/utils/utils.pro
 %patch0 -p1
 %patch1 -p1
 
