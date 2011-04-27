@@ -1,0 +1,11 @@
+--- vacuum-1.1.0.r1541-svn/src/utils/utils.pro~	2011-04-27 14:26:26.000000000 +0200
++++ vacuum-1.1.0.r1541-svn/src/utils/utils.pro	2011-04-27 15:05:01.876666712 +0200
+@@ -18,7 +18,7 @@
+ }
+ 
+ LIBS              += -L../libs
+-LIBS              += -lzlib -lidn -lminizip -lqxtglobalshortcut -lidle
++LIBS              += -lzlib -lidn -lminizip -lqxtglobalshortcut -lidle -lz
+ macx {
+   QMAKE_LFLAGS    += -framework Carbon
+ } else:unix {
