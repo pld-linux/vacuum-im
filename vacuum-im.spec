@@ -1,17 +1,20 @@
 #
-# TODO: arch dependend compiler not everywhere passed
+# TODO: - arch dependend compiler not everywhere passed
+#	- do we need -devel subpackage?
 #
 %define		sname	vacuum
+%define		svn	r1541
 Summary:	Crossplatform Jabber client written on Qt
 Summary(pl.UTF-8):	Międzyplatformowy klient Jabbera napisany w Qt
 Name:		vacuum-im
-Version:	1.1.0
-Release:	1
+Version:	1.1.0.%{svn}
+Release:	0.%{svn}.1
 License:	GPL v3+
 Group:		Applications/Communications
-Source0:	http://vacuum-im.googlecode.com/files/%{sname}-%{version}.tar.gz
-# Source0-md5:	cd0e9f76640a8bba4e9186ba7e78a5b6
+Source0:	%{sname}-%{version}-svn.tar.gz
+# Source0-md5:	0fa22b86b8f2b2035dcaae49d46f7377
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-link.patch
 URL:		http://code.google.com/p/vacuum-im/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
@@ -19,9 +22,11 @@ BuildRequires:	QtNetwork-devel
 BuildRequires:	QtWebKit-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	qt4-build >= 4.3.3-3
+BuildRequires:	qt4-linguist >= 4.3.3-3
 BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
+BuildRequires:	xorg-lib-libXScrnSaver-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,8 +52,10 @@ This package includes files needed to develop Vacuum-IM modules.
 Ta paczka zawiera pliki niezbędne do rozwijania modułów dla Vacuum-IM.
 
 %prep
-%setup -q -n %{sname}-%{version}
+%setup -q -n %{sname}-%{version}-svn
+%undos src/utils/utils.pro
 %patch0 -p1
+%patch1 -p1
 
 %build
 qmake-qt4 -recursive vacuum.pro \
@@ -68,7 +75,6 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 mv $RPM_BUILD_ROOT%{_bindir}/%{sname} $RPM_BUILD_ROOT%{_bindir}/%{name}
 mv $RPM_BUILD_ROOT%{_desktopdir}/%{sname}.desktop $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 mv $RPM_BUILD_ROOT%{_pixmapsdir}/%{sname}.png $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
