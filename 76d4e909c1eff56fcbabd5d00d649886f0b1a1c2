@@ -1,0 +1,3 @@
+- updated to svn rev 1541
+- fixed linking (patch)
+- BRs: qt4-linguist >= 4.3.3-3 and xorg-lib-libXScrnSaver-devel
