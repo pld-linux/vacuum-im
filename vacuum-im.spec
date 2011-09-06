@@ -5,13 +5,14 @@
 Summary:	Crossplatform Jabber client written on Qt
 Summary(pl.UTF-8):	Międzyplatformowy klient Jabbera napisany w Qt
 Name:		vacuum-im
-Version:	1.1.0
+Version:	1.1.1
 Release:	1
 License:	GPL v3+
 Group:		Applications/Communications
 Source0:	http://vacuum-im.googlecode.com/files/%{sname}-%{version}.tar.gz
-# Source0-md5:	cd0e9f76640a8bba4e9186ba7e78a5b6
+# Source0-md5:	74ea1d14da1744b03852ae41fadf8bdb
 Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-link.patch
 URL:		http://code.google.com/p/vacuum-im/
 BuildRequires:	QtCore-devel
 BuildRequires:	QtGui-devel
@@ -22,6 +23,7 @@ BuildRequires:	qt4-build >= 4.3.3-3
 BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,6 +51,7 @@ Ta paczka zawiera pliki niezbędne do rozwijania modułów dla Vacuum-IM.
 %prep
 %setup -q -n %{sname}-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 qmake-qt4 -recursive vacuum.pro \
