@@ -5,12 +5,12 @@
 Summary:	Crossplatform Jabber client written on Qt
 Summary(pl.UTF-8):	Międzyplatformowy klient Jabbera napisany w Qt
 Name:		vacuum-im
-Version:	1.1.1
+Version:	1.1.2
 Release:	1
 License:	GPL v3+
 Group:		Applications/Communications
 Source0:	http://vacuum-im.googlecode.com/files/%{sname}-%{version}.tar.gz
-# Source0-md5:	74ea1d14da1744b03852ae41fadf8bdb
+# Source0-md5:	96b56ce028e3be6a2d0fcbc7f9eaf072
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-link.patch
 URL:		http://code.google.com/p/vacuum-im/
