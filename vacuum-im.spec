@@ -2,15 +2,16 @@
 # TODO: arch dependend compiler not everywhere passed
 #
 %define		sname	vacuum
+%define		svn	1714
 Summary:	Crossplatform Jabber client written on Qt
 Summary(pl.UTF-8):	Międzyplatformowy klient Jabbera napisany w Qt
 Name:		vacuum-im
-Version:	1.1.2
-Release:	1
+Version:	1.1.2_%{svn}
+Release:	0.%{svn}.1
 License:	GPL v3+
 Group:		Applications/Communications
 Source0:	http://vacuum-im.googlecode.com/files/%{sname}-%{version}.tar.gz
-# Source0-md5:	96b56ce028e3be6a2d0fcbc7f9eaf072
+# Source0-md5:	fce1544f7e43ef7fd236ad25b24911a2
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-link.patch
 URL:		http://code.google.com/p/vacuum-im/
