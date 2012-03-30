@@ -2,7 +2,7 @@
 # TODO: arch dependend compiler not everywhere passed
 #
 %define		sname	vacuum
-%define		svn	1714
+%define		svn	1798
 Summary:	Crossplatform Jabber client written on Qt
 Summary(pl.UTF-8):	Międzyplatformowy klient Jabbera napisany w Qt
 Name:		vacuum-im
@@ -10,8 +10,10 @@ Version:	1.1.2_%{svn}
 Release:	0.%{svn}.1
 License:	GPL v3+
 Group:		Applications/Communications
-Source0:	http://vacuum-im.googlecode.com/files/%{sname}-%{version}.tar.gz
-# Source0-md5:	fce1544f7e43ef7fd236ad25b24911a2
+#Source0:	http://vacuum-im.googlecode.com/files/%{sname}-%{version}.tar.gz
+# svn export http://vacuum-im.googlecode.com/svn/trunk/ vacuum
+Source0:	http://carme.pld-linux.org/~cactus/snaps/%{sname}-%{version}.tar.xz
+# Source0-md5:	1644a61e2748abeb7dc888d92b994da8
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-link.patch
 URL:		http://code.google.com/p/vacuum-im/
@@ -84,7 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_libdir}/libvacuumutils.so.*.*.*
 %attr(755,root,root) %{_libdir}/libvacuumutils.so.1
-%attr(755,root,root) %ghost %{_libdir}/libvacuumutils.so.1.7
+%attr(755,root,root) %ghost %{_libdir}/libvacuumutils.so.1.12
 %dir %{_libdir}/%{sname}
 %dir %{_libdir}/%{sname}/plugins
 %attr(755,root,root) %{_libdir}/%{sname}/plugins/*.so
